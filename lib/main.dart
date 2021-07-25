@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/material/bottom_navigation_bar.dart';
 
 void main() {
   runApp(TravellApp());
@@ -87,6 +86,7 @@ class TravellApp extends StatelessWidget {
             textSection,
           ],
         ),
+        /*
         bottomNavigationBar: BottomNavigationBar(
           //currentIndex: 0,
           fixedColor: Colors.yellow,
@@ -97,6 +97,11 @@ class TravellApp extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.notifications)),
           ],
           onTap: (int indexOfItem) {},
+        ),*/
+        floatingActionButton: FloatingActionButton(
+          elevation: 10.0,
+          child: Icon(Icons.add),
+          onPressed: () {},
         ),
       ),
     );
