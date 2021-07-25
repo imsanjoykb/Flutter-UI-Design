@@ -103,6 +103,30 @@ class TravellApp extends StatelessWidget {
           child: Icon(Icons.add),
           onPressed: () {},
         ),
+        drawer: Drawer(
+          child: ListView(
+            children: const <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.lightBlue,
+                ),
+                child: Text(
+                  "Travelling App",
+                  style: TextStyle(color: Colors.black, fontSize: 24),
+                ),
+              ),
+              ListTile(
+                title: Text("Tea Stall"),
+              ),
+              ListTile(
+                title: Text("Cox Baxar"),
+              ),
+              ListTile(
+                title: Text("Sajek"),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
