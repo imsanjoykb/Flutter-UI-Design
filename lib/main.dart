@@ -1,12 +1,13 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/src/material/bottom_navigation_bar.dart';
 
 void main() {
   runApp(TravellApp());
 }
 
 class TravellApp extends StatelessWidget {
+  get bottomNavigationBar => null;
+
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
@@ -59,11 +60,12 @@ class TravellApp extends StatelessWidget {
 
     Widget textSection = Container(
       padding: const EdgeInsets.all(13),
-      child: Text(
-        'Generally, the small tea stalls sell low-cost tea to the customers along with other foods.'
-        'Sometimes these stores don’t provide even sitting arrangements. '
-        'Here, you can price a cup of tea typically Rs 5 to 10. ',
-      ),
+      child: Text('Generally, the small tea stalls sell low-cost tea to the customers along with other foods.'
+          'Sometimes these stores don’t provide even sitting arrangements. '
+          'Here, you can price a cup of tea typically Rs 5 to 10. '
+          'In urban areas, the demand for tea bars has increased in the recent past.'
+          'A lot of companies are now offering franchise business opportunities to new entrepreneurs.'
+          'If you want to start a business with a brand, then the franchise is the better option for you. With an established brand, you can generate a good number of clients from the very first day.'),
     );
 
     return MaterialApp(
@@ -84,6 +86,17 @@ class TravellApp extends StatelessWidget {
             buttionSection,
             textSection,
           ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          //currentIndex: 0,
+          fixedColor: Colors.yellow,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home)),
+            BottomNavigationBarItem(icon: Icon(Icons.search)),
+            BottomNavigationBarItem(icon: Icon(Icons.account_circle)),
+            BottomNavigationBarItem(icon: Icon(Icons.notifications)),
+          ],
+          onTap: (int indexOfItem) {},
         ),
       ),
     );
