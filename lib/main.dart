@@ -56,9 +56,40 @@ class TravellApp extends StatelessWidget {
         ],
       ),
     );
+
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(13),
+      child: Text(
+        'Generally, the small tea stalls sell low-cost tea to the customers along with other foods.'
+        'Sometimes these stores don’t provide even sitting arrangements. '
+        'Here, you can price a cup of tea typically Rs 5 to 10. ',
+      ),
+    );
+
+    return MaterialApp(
+      title: 'Tea Stall',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Tea Stall Interface'),
+        ),
+        body: ListView(
+          children: [
+            Image.asset(
+              'images/teastall.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttionSection,
+            textSection,
+          ],
+        ),
+      ),
+    );
   }
 
-  Column _buildButtonColumn(Color color, IconData Icon, String label) {
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -66,12 +97,14 @@ class TravellApp extends StatelessWidget {
         Icon(icon, color: color),
         Container(
           margin: const EdgeInsets.only(top: 8),
-          child: Text(label,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: color,
-              )),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
         ),
       ],
     );
